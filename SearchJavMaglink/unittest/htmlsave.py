@@ -8,7 +8,7 @@
 
 import urllib.request
 
-JavNo = 'meyd-450'
+JavNo = 'abp-739'
 url = 'https://skrbt3.xyz/'
 SearchUrl = url + '/search?keyword=' + JavNo
 headers = {

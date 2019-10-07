@@ -7,7 +7,7 @@
 """
 from bs4 import BeautifulSoup
 
-InputFile = 'D:/Python/Project/ExcelAccess/SearchJavMaglink/datafile/rbd-456.html'
+InputFile = 'D:/Python/Project/ExcelAccess/SearchJavMaglink/datafile/abp-739.html'
 OutputFile = 'D:/Python/Project/ExcelAccess/SearchJavMaglink/datafile/SingleJavText.xls'
 
 TestFile = open(InputFile, 'r', encoding='utf-8')

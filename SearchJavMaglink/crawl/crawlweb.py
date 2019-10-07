@@ -8,8 +8,8 @@
 import urllib.request
 
 
-def get_av_web(av_url, av_info, av_error_log):
-    search_href = av_url + '/search?keyword=' + av_info[0]
+def crawl_web(sch_url,info,error_list):
+    search_href = sch_url + '/search?keyword=' + info[0]
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, '
                       'like Gecko) '
@@ -20,6 +20,6 @@ def get_av_web(av_url, av_info, av_error_log):
         search_html_text = response.read().decode('utf-8')
     except Exception as e:
         search_html_text = None
-        print(av_info[0] + ' ' + str(e))
-        av_error_log.append([av_info[0], av_info[1], str(e)])
+        print(info[0] + ' ' + str(e))
+        error_list.append([av_info[0], av_info[1], str(e)])
     return search_html_text
