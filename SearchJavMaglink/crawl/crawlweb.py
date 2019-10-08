@@ -11,9 +11,9 @@ import urllib.request
 def crawl_web(sch_url,info,error_list):
     search_href = sch_url + '/search?keyword=' + info[0]
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, '
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, '
                       'like Gecko) '
-                      'Chrome/56.0.2924.87 Safari/537.36'}
+                      'Chrome/64.0.3282.140 Safari/537.36'}
     request = urllib.request.Request(url=search_href, headers=headers)
     try:
         response = urllib.request.urlopen(request, timeout=10)
@@ -21,5 +21,5 @@ def crawl_web(sch_url,info,error_list):
     except Exception as e:
         search_html_text = None
         print(info[0] + ' ' + str(e))
-        error_list.append([av_info[0], av_info[1], str(e)])
+        error_list.append([info[0], info[1], str(e)])
     return search_html_text

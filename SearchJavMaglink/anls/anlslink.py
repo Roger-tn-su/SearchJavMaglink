@@ -50,12 +50,13 @@ def anls_mag(mag_list,first_list,second_list,bak_list,error_list):
         del mag_list[:int(mag_list[0][6])]
         av_slice.sort(key=take_size)
         for item in av_slice[:]:
-            av_code_pattern = r'.*' + item[0].value.split('-', 1)[0] + r'.*' + \
-                            item[0].value.split('-', 1)[1] + r'.*'
-            if re.search(illegal_pattern, item[2].value, re.IGNORECASE) is not None:
+            av_code_pattern = r'.*' + item[0].split('-', 1)[0] + r'.*' + item[0].split('-', 1)[1] \
+                              + r'.*'
+            if re.search(illegal_pattern, item[2], re.IGNORECASE) is not None:
                 continue
-            elif re.search(av_code_pattern, item[2].value, re.IGNORECASE) is not None:
-                if (re.search(legal_pattern, item[2].value, re.IGNORECASE) is not None) and (flag == 0):
+            elif re.search(av_code_pattern, item[2], re.IGNORECASE) is not None:
+                if (re.search(legal_pattern, item[2], re.IGNORECASE) is not None) and \
+                        (flag == 0):
                     first_list.append(item)
                     flag = 1
                 else:
